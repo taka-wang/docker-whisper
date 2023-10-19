@@ -1,0 +1,8 @@
+.venv
+.git
+_models
+.gitignore
+*.mp3
+*.mp4
+*.wav
+*.srt
