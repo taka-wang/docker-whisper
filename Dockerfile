@@ -42,6 +42,7 @@ RUN wget https://github.com/Purfview/whisper-standalone-win/releases/download/fa
     && rm -rf /tmp/whisper-faster Whisper-Faster_r160_linux.zip
 
 COPY app.py /app/
+COPY run.sh /app/
 
 # Run script
 CMD ["python3", "app.py"]
