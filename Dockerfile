@@ -13,12 +13,6 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# # Download and install geckodriver if not in the PATH
-# RUN GECKODRIVER_VERSION=$(wget -O - https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep 'tag_name' | cut -d '"' -f 4) \
-#     && wget https://github.com/mozilla/geckodriver/releases/download/$GECKODRIVER_VERSION/geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz \
-#     && tar -xvzf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz -C /usr/local/bin \
-#     && rm geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz
-
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -50,7 +44,7 @@ RUN wget https://github.com/Purfview/whisper-standalone-win/releases/download/fa
     && chmod +x /usr/local/bin/whisper-faster \
     && rm -rf /tmp/whisper-faster Whisper-Faster_r160_linux.zip
 
-COPY app.py /app/
+COPY *.py /app/
 COPY run.sh /app/
 
 # Run script

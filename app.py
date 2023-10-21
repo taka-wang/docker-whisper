@@ -24,6 +24,7 @@ def setup_argparse():
     return parser.parse_args()
 
 def download(url: str = "https://youtu.be/XZEkIK4_d-o") -> str:
+    # download from YT
     logger.info('Downloading from the internet..')
 
     try:
@@ -99,9 +100,9 @@ def translate(input_file: str, src_lang: str = 'en', dest_lang: str = 'zh'):
     # translate subtitle
     logger.info(f'Translating subtitle from [{src_lang}] to [{dest_lang}]...')
 
-    should_convert_to_traditional = False
+    should_convert = False
     if dest_lang.lower() in ['zh_tw', 'zh-tw']:
-        should_convert_to_traditional = True
+        should_convert = True
         dest_lang = 'zh'
 
     translator = DeeplTranslator()  # or TranslatePy() or DeeplApi(api_key)
@@ -114,7 +115,7 @@ def translate(input_file: str, src_lang: str = 'en', dest_lang: str = 'zh'):
     srt.save(output_filename)
     translator.quit()
 
-    if should_convert_to_traditional:
+    if should_convert:
         zh_tw_filename = f"{base_filename}.zh-tw.srt"
         convert_s2t(output_filename, zh_tw_filename)
 
