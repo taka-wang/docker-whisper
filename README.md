@@ -14,6 +14,9 @@ whisper-faster /tmp1/lesson1.mp4 --model_dir=/models/ --model="large-v2" --langu
 
 # execute python3 version
 python3 app.py -i /tmp1/lesson1.mp4 -o /tmp1/lesson1.srt
+
+# execute whisper-ctranslate2 version
+whisper-ctranslate2 /tmp1/lesson1.mp4 --model_directory /models/faster-whisper-large-v2/ --vad_filter True --vad_min_silence_duration_ms 1000 --beam_size 5 --print_colors True --output_format srt --device cuda --compute_type float16 --language en
 ```
 
 ---
@@ -22,3 +25,4 @@ python3 app.py -i /tmp1/lesson1.mp4 -o /tmp1/lesson1.srt
 
 - [Faster Whisper transcription with CTranslate2](https://github.com/guillaumekln/faster-whisper/tree/5a0541ea7d054aa3716ac492491de30158c20057)
 - [whisper-standalone-win](https://github.com/Purfview/whisper-standalone-win)
+- [whisper-ctranslate2](https://github.com/Softcatala/whisper-ctranslate2)
