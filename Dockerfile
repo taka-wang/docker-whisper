@@ -34,10 +34,8 @@ RUN download_model() { \
     wget -O "/models/$1/model.bin" "https://huggingface.co/guillaumekln/$1/resolve/main/model.bin" && \
     wget -O "/models/$1/tokenizer.json" "https://huggingface.co/guillaumekln/$1/resolve/main/tokenizer.json" && \
     wget -O "/models/$1/vocabulary.txt" "https://huggingface.co/guillaumekln/$1/resolve/main/vocabulary.txt"; \
-}
-
-# Download models
-RUN download_model faster-whisper-large-v2 && \
+} && \
+    download_model faster-whisper-large-v2 && \
     download_model faster-whisper-medium
 
 # Download and install the Whisper binary
