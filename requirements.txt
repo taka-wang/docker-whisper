@@ -4,5 +4,6 @@ tqdm
 whisper-ctranslate2         # https://github.com/Softcatala/whisper-ctranslate2
 srtranslator                # translator
 opencc-python-reimplemented # chinese conversion
-yt-dlp                     # yt download
+yt-dlp                      # yt download
 loguru                      # logger
+git+https://github.com/m-bain/whisperx.git
