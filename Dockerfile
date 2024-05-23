@@ -39,7 +39,7 @@ RUN download_model() { \
     download_model faster-whisper-medium
 
 # Download and install the Whisper binary
-RUN wget -O /tmp/whisper-faster.zip "https://github.com/Purfview/whisper-standalone-win/releases/download/faster-whisper/Whisper-Faster_r160_linux.zip" \
+RUN wget -O /tmp/whisper-faster.zip "https://github.com/Purfview/whisper-standalone-win/releases/download/faster-whisper/Whisper-Faster_r189.1_linux.zip" \
     && unzip /tmp/whisper-faster.zip -d /tmp/whisper-faster \
     && mv /tmp/whisper-faster/Whisper-Faster/whisper-faster /usr/local/bin/ \
     && chmod +x /usr/local/bin/whisper-faster \
